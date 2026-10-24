@@ -99,6 +99,7 @@ public class SecurityConfig {
                                 "/api/employees/**"
                         ).hasRole("ADMIN")
 
+                        .requestMatchers("/health").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(
